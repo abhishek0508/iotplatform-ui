@@ -4,9 +4,12 @@ from flask_login import LoginManager, login_required, login_user, logout_user, c
 from models.Users import User
 from models.Users import db
 import re
+import os
 
 # setup the app
 app = Flask(__name__)
+app.config["UPLOAD_FOLDER"] = os.path.dirname(os.path.realpath(__file__)) + "/static/uploads"
+app.config["ALLOWED_EXTENSIONS"] = ["zip"]
 app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = "SuperSecretKey"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -29,7 +32,7 @@ with app.app_context():
 @app.route('/')
 @login_required
 def index():
-    return render_template('index.html', user=current_user)
+    return render_template('forms.html', user=current_user)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -162,6 +165,15 @@ def profile():
 def settings():
     return render_template('settings.html', user=current_user)
 
+@app.route('/uploads/', methods=["POST"])
+@login_required
+def upload_file():
+    uploaded_file = request.files['file']
+    if uploaded_file.filename != '':
+        # uploaded_file.save(os.path.join('static/uploads/', current_user.get_id()))
+        uploaded_file.save(os.path.join('static/uploads/', uploaded_file.filename))
+    return redirect(url_for('forms'))
+
 ####  end routes  ####
 
 
@@ -213,4 +225,4 @@ def password_check(password):
 
 if __name__ == "__main__":
 	# change to app.run(host="0.0.0.0"), if you want other machines to be able to reach the webserver.
-	app.run() 
+	app.run(host="0.0.0.0",port=5000) 
