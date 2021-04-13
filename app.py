@@ -32,7 +32,7 @@ with app.app_context():
 @app.route('/')
 @login_required
 def index():
-    return render_template('forms.html', user=current_user)
+    return render_template('index.html', user=current_user)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -44,7 +44,7 @@ def login():
         return render_template('login.html')
 
     # get the form data
-    username = request.form['username']
+    username = request.form['username'] 
     password = request.form['password']
 
     remember_me = False
@@ -61,8 +61,8 @@ def login():
 
     # login the user
     login_user(registered_user, remember=remember_me)
-    return redirect(request.args.get('next') or url_for('index'))
 
+    return redirect(request.args.get('next') or url_for('index'))
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
@@ -75,6 +75,7 @@ def register():
     conf_password = request.form['confirm-password']
     username = request.form['username']
     email = request.form['email']
+    role = request.form['role']
 
     # make sure the password match
     if conf_password != password:
@@ -87,7 +88,7 @@ def register():
     # generate error messages if it doesnt pass
     if True in check_password.values():
         for k,v in check_password.items():
-            if str(v) is "True":
+            if str(v) == "True":
                 flash(k)
 
         return render_template('register.html')
@@ -96,7 +97,7 @@ def register():
     pw_hash = bcrypt.generate_password_hash(password)
 
     # create a user, and check if its unique
-    user = User(username, pw_hash, email)
+    user = User(username, pw_hash, email, role)
     u_unique = user.unique()
 
     # add the user
@@ -151,9 +152,9 @@ def bootstrap_grid():
     return render_template('bootstrap-grid.html', user=current_user)
 
 
-@app.route('/blank-page')
+@app.route('/schedule-application')
 def blank_page():
-    return render_template('blank-page.html', user=current_user)
+    return render_template('schedule-application.html', user=current_user)
 
 
 @app.route('/profile')
@@ -225,4 +226,5 @@ def password_check(password):
 
 if __name__ == "__main__":
 	# change to app.run(host="0.0.0.0"), if you want other machines to be able to reach the webserver.
-	app.run(host="0.0.0.0",port=5000) 
+    # db.create_all()
+    app.run(host="localhost",port=5005) 

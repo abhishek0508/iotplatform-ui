@@ -75,15 +75,37 @@
                     <!-- <li class="active">
                         <a href="/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li> -->
-                    <li>
-                        <a href="/charts"><i class="fa fa-fw fa-bar-chart-o"></i> See Running Application</a>
-                    </li>
+                    {% if user.role == "developer" %}
                     <!-- <li>
-                        <a href="/tables"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="/charts"><i class="fa fa-fw fa-bar-chart-o"></i> See Running Application</a>
                     </li> -->
+
+                    <li>
+                        <a href="/"><i class="fa fa-fw fa-bar-chart-o"></i> Dashboard </a>
+                    </li>
+
                     <li>
                         <a href="/forms"><i class="fa fa-fw fa-edit"></i> Upload Application</a>
                     </li>
+
+                    <li>
+                        <a href="/schedule-application"><i class="fa fa-fw fa-edit"></i> Schedule Application</a>
+                    </li>
+
+                    {% else %}
+                    <!-- <li>
+                        <a href="/charts"><i class="fa fa-fw fa-bar-chart-o"></i> See Running Application</a>
+                    </li> -->
+                    
+                    <li>
+                        <a href="/"><i class="fa fa-fw fa-bar-chart-o"></i> Dashboard </a>
+                    </li>
+
+                    <li>
+                        <a href="/schedule-application"><i class="fa fa-fw fa-edit"></i> Schedule Application</a>
+                    </li>
+
+                    {% endif %}
                     <!-- <li>
                         <a href="/bootstrap-elements"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                     </li> -->
@@ -101,9 +123,6 @@
                             </li>
                         </ul>
                     </li> -->
-                    <li>
-                        <a href="/blank-page"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

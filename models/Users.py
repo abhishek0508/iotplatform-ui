@@ -13,12 +13,20 @@ class User(db.Model):
     password = db.Column('password', db.String(255))
     email = db.Column('email', db.String(60), unique=True, index=True)
     registered_on = db.Column('registered_on', db.DateTime)
+    role = db.Column('role',db.String(20))
 
-    def __init__(self, username, password, email):
+    def __init__(self, username, password, email, role):
         self.username = username
         self.password = password
         self.email = email
         self.registered_on = datetime.utcnow()
+        self.role = role
+
+    def role_type(self):
+        if(self.role == "end_user" or self.role == "developer"):
+            return True
+        else:
+            return False
 
     def is_authenticated(self):
         return True
