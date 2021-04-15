@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Forms
+                            Schedule Application
                         </h1>
                         <ol class="breadcrumb">
                             <li>
@@ -25,216 +25,205 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-6">
 
-                        <!-- <form role="form" multipart/form-data> -->
-                        <form method="POST" action="/uploads/" enctype="multipart/form-data">
+                    <form method="POST" action="/uploads/" enctype="multipart/form-data">
 
-                            <div class="form-group">
-                                <label>Text Input</label>
-                                <input class="form-control">
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Text Input with Placeholder</label>
-                                <input class="form-control" placeholder="Enter text">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Static Control</label>
-                                <p class="form-control-static">email@example.com</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Upload Application in Zip Format</label>
-                                <input type="file" name="file">
-                            </div>
-
-                            <!-- <div class="form-group">
-                                <label>Text area</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div> -->
-
-                            <!-- <div class="form-group">
-                                <label>Checkboxes</label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Checkbox 1
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Checkbox 2
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Checkbox 3
-                                    </label>
-                                </div>
-                            </div> -->
-
-                            <!-- <div class="form-group">
-                                <label>Inline Checkboxes</label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">1
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">2
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">3
-                                </label>
-                            </div> -->
-
-                            <!-- <div class="form-group">
-                                <label>Radio Buttons</label>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
-                                    </label>
-                                </div>
-                            </div> -->
-
-                            <!-- <div class="form-group">
-                                <label>Inline Radio Buttons</label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
-                                </label>
-                            </div> -->
-
-                            <!-- <div class="form-group">
-                                <label>Selects</label>
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div> -->
-
-                            <!-- <div class="form-group">
-                                <label>Multiple Selects</label>
-                                <select multiple class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div> -->
-
-                            <button type="submit" class="btn btn-default">Submit Button</button>
-                            <button type="reset" class="btn btn-default">Reset Button</button>
-
-                        </form>
-
-                    </div>
-                    <!-- <div class="col-lg-6">
-                        <h1>Disabled Form States</h1>
-
-                        <form role="form">
-
-                            <fieldset disabled>
+                        <div class="col-lg-6">
 
                                 <div class="form-group">
-                                    <label for="disabledSelect">Disabled input</label>
-                                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="disabledSelect">Disabled select menu</label>
-                                    <select id="disabledSelect" class="form-control">
-                                        <option>Disabled select</option>
+                                    <label>Select Application</label>
+                                    <select class="form-control">
+                                        <option>Application 1</option>
+                                        <option>Application 2</option>
+                                        <option>Application 3</option>
+                                        <option>Application 4</option>
+                                        <option>Application 5</option>
                                     </select>
                                 </div>
 
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Disabled Checkbox
-                                    </label>
+                                <div class="form-group">
+                                    <label>Select Algorithms/Service</label>
+                                    <select class="form-control">
+                                        <option>Algorithm 1</option>
+                                        <option>Algorithm 2</option>
+                                        <option>Algorithm 3</option>
+                                        <option>Algorithm 4</option>
+                                        <option>Algorithm 5</option>
+                                    </select>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Disabled Button</button>
 
-                            </fieldset>
+                                <div class="form-group">
+                                    <label>Schedule This Service/Algorithm(Yes) or Run Immediately(No)</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Yes
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">No
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                
 
-                        </form>
+                                <div class="form-group">
+                                    <label>If Selected Yes above(Enter Start Time in comma separated format)("hh:mm:ss,hh:mm:ss")</label>
+                                    <input class="form-control">
+                                </div>
 
-                        <h1>Form Validation</h1>
+                                <div class="form-group">
+                                    <label>Enter Duration("hh:mm:ss")</label>
+                                    <input class="form-control">
+                                </div>
 
-                        <form role="form">
 
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess">Input with success</label>
-                                <input type="text" class="form-control" id="inputSuccess">
+                                <div class="form-group">
+                                    <label>Select Days to run this service</label>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">Monday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">Tuesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">Wednesday
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">Thursday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">Friday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">Saturday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">Sunday
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <!-- <div class="form-group">
+                                    <label>Text Input with Placeholder</label>
+                                    <input class="form-control" placeholder="Enter text">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Static Control</label>
+                                    <p class="form-control-static">email@example.com</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Upload Application in Zip Format</label>
+                                    <input type="file" name="file">
+                                </div> -->
+
+                                <!-- <div class="form-group">
+                                    <label>Text area</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div> -->
+
+                                
+
+                                <!-- <div class="form-group">
+                                    <label>Inline Checkboxes</label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox">1
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox">2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox">3
+                                    </label>
+                                </div> -->
+
+                                <!-- <div class="form-group">
+                                    <label>Inline Radio Buttons</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
+                                    </label>
+                                </div> -->
+
+
+                                <!-- <div class="form-group">
+                                    <label>Multiple Selects</label>
+                                    <select multiple class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div> -->
+
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>Input Action to the user</h3>
+                            <div class="form-group">
+                                <label>Input Message to be displayed to the user</label>
+                                <textarea class="form-control" rows="3"></textarea>
                             </div>
 
-                            <div class="form-group has-warning">
-                                <label class="control-label" for="inputWarning">Input with warning</label>
-                                <input type="text" class="form-control" id="inputWarning">
+
+                            <div class="form-group">
+                                <label>Enter Email Address</label>
+                                <input type="email" name="email" id="email" tabindex="1" class="form-control"
+                                       placeholder="Email Address" value="">
                             </div>
 
-                            <div class="form-group has-error">
-                                <label class="control-label" for="inputError">Input with error</label>
-                                <input type="text" class="form-control" id="inputError">
+                            <div class="form-group">
+                                <label>Enter Phone No.</label>
+                                <input type="mobile" name="mobile" id="mobile" tabindex="1" class="form-control"
+                                       placeholder="Phone No." value="">
                             </div>
 
-                        </form>
+<!--                             
+                            <div class="form-group">
+                                <label></label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div> -->
+                            
+<!-- 
+                            <div class="form-group">
+                                <label>Enter </label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div> -->
 
-                        <h1>Input Groups</h1>
-
-                        <form role="form">
-
-                            <div class="form-group input-group">
-                                <span class="input-group-addon">@</span>
-                                <input type="text" class="form-control" placeholder="Username">
+                            <div class="form-group">
+                                <label>Enter Latitude & Longitude in "23.45:45.45,23.45:45.45" format</label>
+                                <textarea class="form-control" rows="3"></textarea>
                             </div>
-
-                            <div class="form-group input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon">.00</span>
-                            </div>
-
-                            <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-eur"></i></span>
-                                <input type="text" class="form-control" placeholder="Font Awesome Icon">
-                            </div>
-
-                            <div class="form-group input-group">
-                                <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon">.00</span>
-                            </div>
-
-                            <div class="form-group input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
-                            </div>
-
-                        </form>
-
-                        <p>For complete documentation, please visit <a href="http://getbootstrap.com/css/#forms">Bootstrap's Form Documentation</a>.</p>
-
-                    </div> -->
+                            
+                            <button type="submit" class="btn btn-default">Submit Button</button>
+                            <button type="reset" class="btn btn-default">Reset Button</button>
+                        </div>
+                        
+                    </form>
                 </div>
                 <!-- /.row -->
 
