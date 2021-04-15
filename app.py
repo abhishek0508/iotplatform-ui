@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, send_file
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 from models.Users import User
 from models.Users import db
+import requests, json
 import re
 import os
 
@@ -166,6 +167,41 @@ def profile():
 def settings():
     return render_template('settings.html', user=current_user)
 
+@app.route('/download', methods=["GET","POST"])
+@login_required
+def download():
+    # Appending app path to upload folder path within app root folder
+    filepath = os.path.join(app.config['UPLOAD_FOLDER'],filename)
+    filename = "template.json"
+    # Returning file from appended path
+    return send_file(filepath, as_attachment=True)
+
+@app.route('/scheduling_request_upload/', methods=["POST"])
+@login_required
+def scheduling_request_upload():
+    uploaded_file = request.files['file']
+
+    if uploaded_file.filename != '':
+        fpath = os.path.join('static/uploads/', uploaded_file.filename)
+        uploaded_file.save(fpath)
+
+    with open(fpath, "r") as f:
+        data = json.loads(f.read())
+    requests.post('http://127.0.0.1:13337/schedule_request',json=data)
+
+    return render_template('index.html', user=current_user)
+
+@app.route('/scheduling_request/', methods=["POST"])
+@login_required
+def scheduling_request():
+    # fname = request.form['filename']
+    # fpath = os.path.join(app.config["UPLOAD_FOLDER"],fname)
+    fpath = os.path.join(app.config["UPLOAD_FOLDER"],"request.json")
+    with open(fpath, "r") as f:
+        data = json.loads(f.read())
+    requests.post('http://127.0.0.1:13337/schedule_request',json=data)
+    return render_template('index.html', user=current_user)
+
 @app.route('/uploads/', methods=["POST"])
 @login_required
 def upload_file():
@@ -174,6 +210,7 @@ def upload_file():
         # uploaded_file.save(os.path.join('static/uploads/', current_user.get_id()))
         uploaded_file.save(os.path.join('static/uploads/', uploaded_file.filename))
     return redirect(url_for('forms'))
+
 
 ####  end routes  ####
 
