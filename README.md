@@ -29,3 +29,5 @@ Request-JSON format
 }
 
 ```
+
+Bus No.1 , Bus No.2, from dropdown instead of lat,long.

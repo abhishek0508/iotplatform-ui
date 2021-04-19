@@ -32,191 +32,117 @@
 
                                 <div class="form-group">
                                     <label>Select Application</label>
-                                    <select class="form-control" id="">
-                                        <option>Application 1</option>
-                                        <option>Application 2</option>
-                                        <option>Application 3</option>
-                                        <option>Application 4</option>
-                                        <option>Application 5</option>
+                                    <select class="form-control" name="application_name" id="app_name">
+                                        <option value="Application1">Application 1</option>
+                                        <option value="Application2">Application 2</option>
+                                        <option value="Application3">Application 3</option>
+                                        <option value="Application4">Application 4</option>
+                                        <option value="Application5">Application 5</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Select Algorithms/Service</label>
-                                    <select class="form-control">
-                                        <option>Algorithm 1</option>
-                                        <option>Algorithm 2</option>
-                                        <option>Algorithm 3</option>
-                                        <option>Algorithm 4</option>
-                                        <option>Algorithm 5</option>
+                                    <select class="form-control" name="algorithms" id="algorithms">
+                                        <option value="Algorithm1">Algorithm 1</option>
+                                        <option value="Algorithm2">Algorithm 2</option>
+                                        <option value="Algorithm3">Algorithm 3</option>
+                                        <option value="Algorithm4">Algorithm 4</option>
+                                        <option value="Algorithm5">Algorithm 5</option>
                                     </select>
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label>Schedule This Service/Algorithm(Yes) or Run Immediately(No)</label>
+                                    <label>Schedule Service</label>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Yes
+                                            <input type="radio" name="isScheduled" id="option1" value=True checked>Later
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">No
+                                            <input type="radio" name="isScheduled" id="optionsRadios2" value=False>Immediately
                                         </label>
                                     </div>
                                 </div>
-                                
-                                
 
                                 <div class="form-group">
-                                    <label>If Selected Yes above(Enter Start Time in comma separated format)("hh:mm:ss,hh:mm:ss")</label>
-                                    <input class="form-control">
+                                    <label>Enter start time of service</label>
+                                    <input class="form-control" id="startTime" name="startTime" placeholder="hh:mm:ss,hh:mm:ss">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Enter Duration("hh:mm:ss")</label>
-                                    <input class="form-control">
+                                    <label>Enter duration of service</label>
+                                    <input class="form-control" id="duration" name="duration" placeholder="hh:mm:ss,hh:mm:ss">
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label>Select Days to run this service</label>
+                                    <label>Select days of week to schedule service</label>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Monday
+                                            <input type="checkbox" value=True name="mon" id="mon">Monday
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Tuesday
+                                            <input type="checkbox" value=True name="tue" id="tue">Tuesday
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Wednesday
+                                            <input type="checkbox" value=True name="wed" id="wed">Wednesday
                                         </label>
                                     </div>
 
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Thursday
+                                            <input type="checkbox" value=True name="thu" id="thu">Thursday
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Friday
+                                            <input type="checkbox" value=True name="fri" id="fri">Friday
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Saturday
+                                            <input type="checkbox" value=True name="sat" id="sat">Saturday
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="">Sunday
+                                            <input type="checkbox" value=True name="sun" id="sun">Sunday
                                         </label>
                                     </div>
                                 </div>
-
-
-                                <!-- <div class="form-group">
-                                    <label>Text Input with Placeholder</label>
-                                    <input class="form-control" placeholder="Enter text">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Static Control</label>
-                                    <p class="form-control-static">email@example.com</p>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Upload Application in Zip Format</label>
-                                    <input type="file" name="file">
-                                </div> -->
-
-                                <!-- <div class="form-group">
-                                    <label>Text area</label>
-                                    <textarea class="form-control" rows="3"></textarea>
-                                </div> -->
-
-                                
-
-                                <!-- <div class="form-group">
-                                    <label>Inline Checkboxes</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox">1
-                                    </label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox">2
-                                    </label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox">3
-                                    </label>
-                                </div> -->
-
-                                <!-- <div class="form-group">
-                                    <label>Inline Radio Buttons</label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
-                                    </label>
-                                </div> -->
-
-
-                                <!-- <div class="form-group">
-                                    <label>Multiple Selects</label>
-                                    <select multiple class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div> -->
 
                         </div>
                         <div class="col-lg-6">
                             <h3>Input Action to the user</h3>
                             <div class="form-group">
-                                <label>Input Message to be displayed to the user</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <label>Input message for the user</label>
+                                <textarea class="form-control" rows="3" name="message" id="message"></textarea>
                             </div>
 
 
                             <div class="form-group">
-                                <label>Enter Email Address</label>
+                                <label>Enter email address</label>
                                 <input type="email" name="email" id="email" tabindex="1" class="form-control"
                                        placeholder="Email Address" value="">
                             </div>
 
                             <div class="form-group">
-                                <label>Enter Phone No.</label>
+                                <label>Enter phone no.</label>
                                 <input type="mobile" name="mobile" id="mobile" tabindex="1" class="form-control"
                                        placeholder="Phone No." value="">
                             </div>
 
-<!--                             
-                            <div class="form-group">
-                                <label></label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div> -->
-                            
-<!-- 
-                            <div class="form-group">
-                                <label>Enter </label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div> -->
                             
                             <div class="form-group">
-                                <label>Enter Latitude & Longitude in "23.45:45.45,23.45:45.45" format</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <label>Enter Latitude & Longitude</label>
+                                <textarea class="form-control" rows="3" placeholder="23.45:45.45,23.45:45.45" name="location" id="location"></textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-default">Schedule</button>
@@ -243,11 +169,6 @@
                     </form>
 
                 </div>
-                <!-- /.row -->
-
             </div>
-            <!-- /.container-fluid -->
-
         </div>
-        <!-- /#page-wrapper -->
 {% endblock %}

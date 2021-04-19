@@ -194,11 +194,72 @@ def scheduling_request_upload():
 @app.route('/scheduling_request/', methods=["POST"])
 @login_required
 def scheduling_request():
-    # fname = request.form['filename']
-    # fpath = os.path.join(app.config["UPLOAD_FOLDER"],fname)
-    fpath = os.path.join(app.config["UPLOAD_FOLDER"],"request.json")
-    with open(fpath, "r") as f:
-        data = json.loads(f.read())
+    application_name = str(request.form['application_name'])
+
+    startTimes = request.form['startTime'].split(',')
+    durations = request.form['duration'].split(',')
+    # all_sensor = request.form['all_sensor']
+    message = request.form['message']
+
+    isScheduled = request.form['isScheduled']
+    locations = request.form['location'].split(',')
+
+    if(isScheduled == False):
+        startTimes = None
+        durations = None
+    # startTimeDummy = "12:01:15,09:34:21"
+    # durationDummy = "01:01:10,00:02:15"
+    # locationDummy = "23.45:32.21,54.12:32"
+
+    email = request.form['email']
+    mobile = request.form['mobile']
+
+    days = list()
+    
+    if request.form.get("mon"):
+        days.append("Monday")
+    if request.form.get("tue"):
+        days.append("Tuesday")
+    if request.form.get("wed"):
+        days.append("Wednesday")
+    if request.form.get("thu"):
+        days.append("Thursday")
+    if request.form.get("fri"):
+        days.append("Friday")
+    if request.form.get("sat"):
+        days.append("Saturday")
+    if request.form.get("sun"):
+        days.append("Sunday")
+
+    # print(days)
+
+    data = {    
+        application_name : {
+            "user_id" : current_user.username,
+            "application_name" : application_name,
+            "algorithms" : {
+                "algorithm1" : {
+                    "isScheduled" : isScheduled,
+                    "schedule" : {
+                        "time" : {
+                            "startTimes" : startTimes,
+                            "durations" : durations
+                        },
+                        "days" : days
+                    },
+                    "action" : {
+                        "user_display" : message,
+                        "sensor_manager" : [{"sensor_id1" : "command1"}],
+                        "notify_user" : [email,mobile]
+                    },
+                    "location": locations
+                    }
+                }
+            }
+        }
+
+    print(data)
+
     requests.post('http://127.0.0.1:13337/schedule_request',json=data)
     return render_template('index.html', user=current_user)
 
